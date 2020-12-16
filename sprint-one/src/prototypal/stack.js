@@ -23,6 +23,6 @@ var stackMethods = {
   size: function() {
     return this.counter;
   }
-};
+}; 
 
 

@@ -24,6 +24,6 @@ var queueMethods = {
   size: function() {
     return this.back - this.front;
   }
-};
+}; 
 
 
