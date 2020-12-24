@@ -20,4 +20,5 @@ class Stack {
   size() {
     return this.counter;
   }
+
 }

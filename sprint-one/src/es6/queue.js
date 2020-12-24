@@ -21,4 +21,5 @@ class Queue {
   size() {
     return this.back - this.front;
   }
+
 }
