@@ -2,22 +2,27 @@ var LinkedList = function() {
   var list = {};
   list.head = null;
   list.tail = null;
+  //added length property
+  list.length = 0;
 
   list.addToTail = function(value) {
     var newNode = Node(value);
     if (list.tail === null) {
       list.tail = newNode;
       list.head = newNode;
+      list.length++;
     } else {
       var old = list.tail;
       list.tail = newNode;
       old.next = newNode;
+      list.length++;
     }
   };
 
   list.removeHead = function() {
     var newHead = list.head;
     list.head = newHead.next;
+    list.length--;
     return newHead.value;
   };
 
@@ -34,6 +39,11 @@ var LinkedList = function() {
       }
     };
     return hasValue(list.head);
+  };
+
+  //advanced: added function size plus tests
+  list.size = function() {
+    return list.length;
   };
 
   return list;

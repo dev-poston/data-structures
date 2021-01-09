@@ -24,7 +24,6 @@ HashTable.prototype.insert = function(k, v) {
   } else {
     this._storage[index] = bucket;
   }
-  console.log(this._storage);
 };
 
 HashTable.prototype.retrieve = function(k) {

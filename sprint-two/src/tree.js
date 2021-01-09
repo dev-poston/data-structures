@@ -27,6 +27,23 @@ treeMethods.contains = function(target) {
   return false;
 };
 
+// added function removeChild
+treeMethods.removeChild = function(target) {
+  var inner = function(child) {
+    console.log(child[0].children);
+    for (var i = 0; i < child.length; i++) {
+      if (child[i].value === target) {
+        child[i].value = child[i].children[0].value;
+        child[i].children = child[i].children[0].children;
+      } else {
+        inner(child[i].children);
+      }
+    }
+  };
+  inner(this.children);
+  console.log(this);
+};
+
 /*
  * Complexity: What is the time complexity of the above functions?
  */
