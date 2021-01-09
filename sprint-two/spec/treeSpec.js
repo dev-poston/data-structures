@@ -43,7 +43,7 @@ describe('tree', function() {
 
   // added function removeChild test
 
-  it('correctly remove a child', function() {
+  it('should correctly remove a child', function() {
     tree.addChild(1);
     tree.children[0].addChild(2);
     tree.children[0].children[0].addChild(3);

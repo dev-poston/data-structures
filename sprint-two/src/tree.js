@@ -30,7 +30,6 @@ treeMethods.contains = function(target) {
 // added function removeChild
 treeMethods.removeChild = function(target) {
   var inner = function(child) {
-    console.log(child[0].children);
     for (var i = 0; i < child.length; i++) {
       if (child[i].value === target) {
         child[i].value = child[i].children[0].value;
@@ -41,7 +40,6 @@ treeMethods.removeChild = function(target) {
     }
   };
   inner(this.children);
-  console.log(this);
 };
 
 /*
