@@ -68,4 +68,26 @@ describe('graph', function() {
     expect(graph.hasEdge(3, 5)).to.equal(true);
     expect(graph.hasEdge(5, 5)).to.equal(true);
   });
+
+  it ('advanced: should return distance between two nodes', function() {
+    graph.addNode(1);
+    graph.addNode(2);
+    graph.addNode(4);
+    graph.addEdge(1, 2);
+    graph.addEdge(2, 4);
+    expect(graph.findWeight(1, 2)).to.equal(1);
+    expect(graph.findWeight(2, 4)).to.equal(2);
+  });
+
+  it ('advanced: should correctly return the shortest path between two nodes', function() {
+    graph.addNode(1);
+    graph.addNode(2);
+    graph.addNode(6);
+    graph.addNode(4);
+    graph.addEdge(1, 2);
+    graph.addEdge(2, 6);
+    graph.addEdge(6, 4);
+    graph.addEdge(2, 4);
+    expect(graph.shortestPath(1, 4)).to.eql([1, 2, 4]);
+  });
 });
